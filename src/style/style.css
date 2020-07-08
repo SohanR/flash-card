@@ -161,4 +161,72 @@ body .cards .card.show-answer .inner-card {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
 }
+
+body .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+body .nav .nav-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+body .nav p {
+  margin: 0 25px;
+}
+
+body .add-container {
+  opacity: 0;
+  z-index: -1;
+  background-color: #f0f0f0;
+  border-top: 2px solid #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+body .add-container h3 {
+  margin: 10px 0;
+}
+
+body .add-container .form-group label {
+  display: block;
+  margin: 20px 0 10px;
+}
+
+body .add-container .form-group textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px;
+  min-width: 500px;
+  max-width: 100%;
+}
+
+body .add-container.show {
+  opacity: 1;
+  z-index: 2;
+}
 /*# sourceMappingURL=style.css.map */
