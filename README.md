@@ -1,27 +1,12 @@
-# My Boilerplate
+# Flash Card
 
-This is my-boilerplate that i use everytime to build project.
+a flash card web app app.
 
-## Building and running on localhost
+## Feature
+- Add card
+- Awesome flip animation
+- store data on local storage
+- card navogation button
+- clear ll card option
 
-First install dependencies:
-
-```sh
-npm install
-```
-
-```sh
-npm start
-```
-
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-To create a development build:
-
-```sh
-npm run build-dev
-```
+### Open [Here](https://sohanr.github.io/flash-card/)
