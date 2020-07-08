@@ -1,30 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="src/style/style.css" />
-    <title>Title</title>
-  </head>
-  <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="dist/bundle.js"></script>
-  </body>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/style/style.css" />
+  <title>Flash Card</title>
+</head>
+
+<body>
+  <button id="clear" class="clear btn">
+    <i class="fas fa-trash"></i> Clear Cards
+  </button>
+
+  <h1>
+    Flash Cards
+    <button id="show" class="btn btn-small">
+      <i class="fas fa-plus"></i> Add New Cards
+    </button>
+  </h1>
+
+  <div id="cards-container" class="cards">
+    <div class="card active">
+      <div class="inner-card">
+        <div class="inner-card-front">
+          <p>
+            what is GG
+          </p>
+        </div>
+        <div class="inner-card-back">
+          <p>
+            GG is GG
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner-card">
+        <div class="inner-card-front">
+          <p>
+            what is GG
+          </p>
+        </div>
+        <div class="inner-card-back">
+          <p>
+            GG is GG
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="nav">
+    <button id="prev" class="nav-button">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <p id="current"></p>
+
+    <button id="next" class="nav-button">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <div id="add-container" class="add-container">
+    <h1>
+      Add New Card
+      <button id="hide" class="btn btn-small btn-ghost">
+        <i class="fas fa-times"></i>
+      </button>
+    </h1>
+
+    <div class="form-group">
+      <label for="question">Question</label>
+      <textarea id="question"></textarea>
+    </div>
+
+    <div class="form-group">
+      <Aabel for="answer">Answer</Aabel>
+      <textarea id="answer"></textarea>
+    </div>
+
+    <button id="add-card" class="btn">
+      <i class="fas fa-plus"></i> Add Card
+    </button>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="dist/bundle.js"></script>
+</body>
+
 </html>
