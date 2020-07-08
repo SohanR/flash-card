@@ -20,20 +20,22 @@ const cardsEl = [];
 
 //store card
 
-const cardsData = [
-    {
-        question: 'que 1',
-        answer: 'ans 1'
-    },
-    {
-        question: 'que 2',
-        answer: 'ans 2'
-    },
-    {
-        question: 'que 3',
-        answer: 'ans 1'
-    },
-];
+const cardsData = getCardData();
+
+// const cardsData = [
+//     {
+//         question: 'que 1',
+//         answer: 'ans 1'
+//     },
+//     {
+//         question: 'que 2',
+//         answer: 'ans 2'
+//     },
+//     {
+//         question: 'que 3',
+//         answer: 'ans 1'
+//     },
+// ];
 
 // create all card
 
@@ -84,8 +86,22 @@ function updateCurrentText() {
 
 createCards();
 
+// get card data from local
+
+function getCardData() {
+    const cards = JSON.parse(localStorage.getItem('cards'));
+    return cards == null ? [] : cards;
+}
+
+
+// add ard to local
+function setCardData(cards) {
+    localStorage.setItem('cards', JSON.stringify(cards));
+    window.location.reload();
+}
 //event listners
 
+//netx btn
 nextBtn.addEventListener('click', () => {
     cardsEl[currentActiveCard].className = 'card left';
 
@@ -100,6 +116,8 @@ nextBtn.addEventListener('click', () => {
     updateCurrentText();
 });
 
+
+//prev btn
 prevBtn.addEventListener('click', () => {
     cardsEl[currentActiveCard].className = 'card right';
 
@@ -112,4 +130,33 @@ prevBtn.addEventListener('click', () => {
     cardsEl[currentActiveCard].className = 'card active';
 
     updateCurrentText();
+});
+
+//show add container
+
+showBtn.addEventListener('click', () => addContainer.classList.add('show'));
+
+// hide 
+hideBtn.addEventListener('click', () => addContainer.classList.remove('show'));
+
+
+// add new card
+addCardBtn.addEventListener('click', () => {
+    const question = questionEl.value;
+    const answer = answerEl.value;
+
+    if (question.trim() && answer.trim()) {
+
+        const newCard = { question, answer };
+
+        createCard(newCard);
+
+        question.value = '';
+        answer.value = '';
+
+        addContainer.classList.remove('show');
+
+        cardsData.push(newCard);
+        setCardData(cardsData);
+    }
 });
